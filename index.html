@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="tr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#1e3a8a" />
-    <meta
-      name="description"
-      content="Licensed Tourist Guide Hüseyin Hizmetçi - Istanbul & Marmara Region Tours in Turkish, Arabic, and English."
-    />
-    <title>Hüseyin Hizmetçi | Istanbul Tour Guide</title>
-    <!-- Tailwind CSS (Served via CDN for simplicity, though PostCSS is recommended for full production) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hüseyin Hizmetçi - Istanbul Tourist Guide</title>
+    <meta name="description" content="Discover Istanbul with expert guide Hüseyin Hizmetçi. 15 years experience, multilingual tours in Turkish, Arabic, and English." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: 'class',
         theme: {
           extend: {
             colors: {
               bosphorus: {
-                900: '#0f172a', // Deep night blue
-                800: '#1e3a8a', // Deep sea blue
+                900: '#0f172a',
+                800: '#1e293b',
               },
               byzantine: {
-                500: '#f59e0b', // Gold
-                600: '#d97706', // Darker gold
+                500: '#f59e0b',
+                600: '#d97706',
               },
               terracotta: {
-                500: '#ea580c', // Roof tile orange
-                700: '#c2410c',
+                500: '#ea580c',
+                600: '#c2410c',
               }
             },
             fontFamily: {
-              sans: ['"Open Sans"', 'sans-serif'],
-              display: ['"Poppins"', 'sans-serif'],
+              sans: ['Open Sans', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
             },
-          },
-        },
-      };
+            animation: {
+              'fade-in': 'fadeIn 0.3s ease-out',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'ken-burns': 'kenBurns 20s infinite alternate',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              kenBurns: {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.15)' },
+              }
+            }
+          }
+        }
+      }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "framer-motion": "https://esm.sh/framer-motion@^12.29.2",
+    "react": "https://esm.sh/react@^19.2.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
     "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-byzantine-50 selection:text-white">
     <div id="root"></div>
-    <!-- Build işlemi için giriş noktası -->
-    <script type="module" src="./index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

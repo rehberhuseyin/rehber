@@ -1,14 +1,29 @@
-export type LanguageCode = 'tr' | 'en' | 'ar';
+export type Language = 'tr' | 'en' | 'ar';
 
-export interface ContentData {
-  nav: {
-    home: string;
-    about: string;
-    services: string;
-    gallery: string;
-    testimonials: string;
-    contact: string;
-  };
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface Service {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface Testimonial {
+  name: string;
+  location: string;
+  comment: string;
+  rating: number;
+}
+
+export interface Feature {
+  title: string;
+  description: string;
+}
+
+export interface Content {
   hero: {
     title: string;
     subtitle: string;
@@ -19,34 +34,25 @@ export interface ContentData {
     title: string;
     name: string;
     role: string;
-    description: string;
+    bio: string;
     badges: string[];
   };
   services: {
     title: string;
     subtitle: string;
-    items: {
-      title: string;
-      description: string;
-    }[];
+    items: Service[];
   };
-  whyChoose: {
+  whyMe: {
     title: string;
-    items: {
-      title: string;
-      description: string;
-    }[];
+    features: Feature[];
   };
   gallery: {
     title: string;
+    subtitle: string;
   };
   testimonials: {
     title: string;
-    reviews: {
-      name: string;
-      comment: string;
-      location: string;
-    }[];
+    items: Testimonial[];
   };
   contact: {
     title: string;
@@ -62,10 +68,22 @@ export interface ContentData {
     info: {
       phone: string;
       instagram: string;
-    };
+      address: string;
+    }
   };
   footer: {
-    rights: string;
-    quickLinks: string;
+    copyright: string;
+    links: {
+      services: string;
+      about: string;
+      contact: string;
+    }
   };
+  nav: {
+    home: string;
+    about: string;
+    services: string;
+    gallery: string;
+    contact: string;
+  }
 }
